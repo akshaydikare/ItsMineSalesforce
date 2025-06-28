@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Order_Pending_Approval_Payment_Order</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Payment Order Pending Approval</label>
+    <queue>Payment_Order_Pending_Approval</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

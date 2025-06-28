@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reg_Fees_Check</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( ISPICKVAL(Course_Opted__c, &apos;Salesforce Admin&apos;) || 
+    ISPICKVAL(Course_Opted__c, &apos;Salesforce Developer&apos;) || 
+    ISPICKVAL(Course_Opted__c, &apos;Salesforce Fullstack&apos;),
+
+     false,
+  
+     IF( Registration_Fees__c  &lt; 5000, true, false) 
+
+)</errorConditionFormula>
+    <errorMessage>Registration fees should not be less than 5000 if you are opting courses other than &apos;Salesforce Admin&apos;, &apos;Salesforce Developer&apos;, &apos;Salesforce Fullstack&apos;.</errorMessage>
+</ValidationRule>

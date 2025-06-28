@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rating_Based_Validation</fullName>
+    <active>false</active>
+    <description>Rating does not match with the Annual Revenue (=&gt; 50000) and Employee Count (=&gt;5000)</description>
+    <errorConditionFormula>AND(
+Text(Rating) = &apos;Hot&apos;,
+OR(
+NumberOfEmployees &lt; 5000,
+AnnualRevenue &lt; 50000
+)
+)</errorConditionFormula>
+    <errorMessage>Rating does not match with the Annual Revenue (=&gt; 50000) and Employee Count (=&gt;5000)</errorMessage>
+</ValidationRule>

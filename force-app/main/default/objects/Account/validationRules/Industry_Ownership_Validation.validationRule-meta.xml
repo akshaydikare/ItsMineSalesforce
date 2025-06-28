@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_Ownership_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(Industry, &apos;Technology&apos;)  &amp;&amp; ISPICKVAL(Ownership, &apos;Subsidiary&apos;)</errorConditionFormula>
+    <errorDisplayField>Ownership</errorDisplayField>
+    <errorMessage>When Industry is Technology then Ownership can not be Subsidiary</errorMessage>
+</ValidationRule>

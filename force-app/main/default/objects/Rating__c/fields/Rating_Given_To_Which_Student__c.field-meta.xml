@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rating_Given_To_Which_Student__c</fullName>
+    <label>Rating Given To Which Student</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Student__c.Course_Opted__c</field>
+            <operation>equals</operation>
+            <value>Angular, Salesforce Admin, Salesforce Developer</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Student__c</referenceTo>
+    <relationshipLabel>Ratings</relationshipLabel>
+    <relationshipName>Ratings</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

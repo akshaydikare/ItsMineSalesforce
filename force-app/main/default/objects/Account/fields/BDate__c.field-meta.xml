@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BDate__c</fullName>
+    <description>This is Ex date field</description>
+    <inlineHelpText>This is Date with Avi and Pashya</inlineHelpText>
+    <label>BDate</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

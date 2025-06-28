@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Picklist__c</fullName>
+    <label>Event Picklist</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Program</fullName>
+                <default>false</default>
+                <label>Program</label>
+            </value>
+            <value>
+                <fullName>Old Program</fullName>
+                <default>false</default>
+                <label>Old Program</label>
+            </value>
+            <value>
+                <fullName>New Program</fullName>
+                <default>false</default>
+                <label>New Program</label>
+            </value>
+            <value>
+                <fullName>OnRoof</fullName>
+                <default>false</default>
+                <label>OnRoof</label>
+            </value>
+            <value>
+                <fullName>Beach Side</fullName>
+                <default>false</default>
+                <label>Beach Side</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

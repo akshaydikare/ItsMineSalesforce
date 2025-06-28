@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Match_Province__c</fullName>
+    <formula>AND(NOT(ISBLANK(ShippingState)&amp;&amp; ISBLANK(BillingState)),
+(BillingState = ShippingState))</formula>
+    <label>Match Province</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_Of_Total_Ratings__c</fullName>
+    <label>Sum Of Total Ratings</label>
+    <summarizedField>Rating__c.Rating_Out_Of_10__c</summarizedField>
+    <summaryForeignKey>Rating__c.Rating_Given_To_Which_Student__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

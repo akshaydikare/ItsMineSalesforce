@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Furniture_Type__c</fullName>
+    <label>Furniture Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Bed</fullName>
+                <default>false</default>
+                <label>Bed</label>
+            </value>
+            <value>
+                <fullName>Chair</fullName>
+                <default>false</default>
+                <label>Chair</label>
+            </value>
+            <value>
+                <fullName>Couch</fullName>
+                <default>false</default>
+                <label>Couch</label>
+            </value>
+            <value>
+                <fullName>SOFA</fullName>
+                <default>false</default>
+                <label>SOFA</label>
+            </value>
+            <value>
+                <fullName>Table</fullName>
+                <default>false</default>
+                <label>Table</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

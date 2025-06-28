@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StudentsWithSalesforce</fullName>
+    <columns>NAME</columns>
+    <columns>Student_Contact__c</columns>
+    <columns>Student_Email__c</columns>
+    <columns>Student_Name__c</columns>
+    <columns>Age__c</columns>
+    <columns>Course_Opted__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Course_Opted__c</field>
+        <operation>equals</operation>
+        <value>Salesforce Admin,Salesforce Developer</value>
+    </filters>
+    <label>StudentsWithSalesforce</label>
+</ListView>
