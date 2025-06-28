@@ -1,0 +1,41 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0055j000004QGAgAAO",
+      "createdByName": "Akshay Dikare",
+      "createdDate": "2024-04-04T16:12:06.000Z",
+      "fileName": "connectedApps/AWS_Glue.connectedApp",
+      "fullName": "AWS_Glue",
+      "id": "09H5j000000OCdKEAW",
+      "lastModifiedById": "0055j000004QGAgAAO",
+      "lastModifiedByName": "Akshay Dikare",
+      "lastModifiedDate": "2024-04-04T16:12:06.000Z",
+      "type": "ConnectedApp"
+    },
+    {
+      "createdById": "0055j000004QGAgAAO",
+      "createdByName": "Akshay Dikare",
+      "createdDate": "2022-06-15T10:52:06.000Z",
+      "fileName": "connectedApps/Salesforce_Connect.connectedApp",
+      "fullName": "Salesforce_Connect",
+      "id": "09H5j000000Yj3jEAC",
+      "lastModifiedById": "0055j000004QGAgAAO",
+      "lastModifiedByName": "Akshay Dikare",
+      "lastModifiedDate": "2024-03-04T22:23:14.000Z",
+      "type": "ConnectedApp"
+    },
+    {
+      "createdById": "0055j000004QGAgAAO",
+      "createdByName": "Akshay Dikare",
+      "createdDate": "2022-06-14T06:18:11.000Z",
+      "fileName": "connectedApps/cURLConfiguration.connectedApp",
+      "fullName": "cURLConfiguration",
+      "id": "09H5j000000Yj0dEAC",
+      "lastModifiedById": "0055j000004QGAgAAO",
+      "lastModifiedByName": "Akshay Dikare",
+      "lastModifiedDate": "2022-06-14T06:18:11.000Z",
+      "type": "ConnectedApp"
+    }
+  ]
+}

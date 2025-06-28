@@ -1,0 +1,29 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0055j000004QGAgAAO",
+      "createdByName": "Akshay Dikare",
+      "createdDate": "2024-03-18T19:19:05.000Z",
+      "fileName": "callCenters/OpenCTI.callCenter",
+      "fullName": "OpenCTI",
+      "id": "04v5j000000PEJmAAO",
+      "lastModifiedById": "0055j000004QGAgAAO",
+      "lastModifiedByName": "Akshay Dikare",
+      "lastModifiedDate": "2024-03-18T19:34:25.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "0055j000004QGAgAAO",
+      "createdByName": "Akshay Dikare",
+      "createdDate": "2024-01-10T15:09:06.000Z",
+      "fileName": "callCenters/OpenCTIDemoAdapter.callCenter",
+      "fullName": "OpenCTIDemoAdapter",
+      "id": "04v5j000000PE2jAAG",
+      "lastModifiedById": "0055j000004QGAgAAO",
+      "lastModifiedByName": "Akshay Dikare",
+      "lastModifiedDate": "2024-03-18T19:20:30.000Z",
+      "type": "CallCenter"
+    }
+  ]
+}
