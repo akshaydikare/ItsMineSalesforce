@@ -1,0 +1,5 @@
+<apex:page controller="PageReference2_Ex">
+    Name : {!name} <br/><br/>
+    age : {!age}<br/><br/>
+    city : {!city}
+</apex:page>

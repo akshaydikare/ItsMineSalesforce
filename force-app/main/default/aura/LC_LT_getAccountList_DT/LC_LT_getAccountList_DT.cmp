@@ -1,0 +1,29 @@
+<aura:component controller="CL_LT_getAccList_DataTable">
+    <aura:attribute name="acc" type="Account[]"/>
+    <aura:attribute name="st" type="string"/>
+    
+    <lightning:card title="Search Account and Show in Tile Format">
+        <lightning:layout>
+            <lightning:layoutItem size="6">
+                <lightning:input lable="Enter the Search Text: " value="{!v.st}"/>
+            </lightning:layoutItem> 
+            <lightning:layoutItem size="6">
+                <lightning:button label="Search" onclick="{!c.searchMe}"/> 
+            </lightning:layoutItem> 
+        </lightning:layout>
+        
+        <lightning:layout multipleRows="true">
+            <aura:iteration items="{!v.acc}" var="a">
+                <lightning:layoutItem size="3" padding="around-small">
+                    <div class="box">
+                        Name: {!a.Name}<br/>
+                        Phone: {!a.Phone}<br/>
+                        Industry: {!a.Industry}<br/>
+                        Rating: {!a.Rating}<br/>
+                    </div>
+                </lightning:layoutItem>   
+            </aura:iteration>
+            
+        </lightning:layout>
+    </lightning:card>
+</aura:component>

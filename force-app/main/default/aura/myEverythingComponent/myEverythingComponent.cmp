@@ -1,0 +1,6 @@
+<aura:component>
+    <lightning:card title="My First Aura/Lightning Component" iconName="standard:account">
+        <lightning:button variant="brand" label="Alert" onclick="{!c.callMe}"/>
+        
+      </lightning:card>
+</aura:component>

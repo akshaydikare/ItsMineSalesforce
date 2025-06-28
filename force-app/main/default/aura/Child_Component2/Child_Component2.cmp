@@ -1,0 +1,6 @@
+<aura:component >
+	<div>
+        Faculty Name : Akshay <br/>
+         Salary : 100000 <br/><br/>
+    </div>
+</aura:component>

@@ -1,0 +1,16 @@
+<apex:page >
+    <apex:form >
+        <apex:pageBlock title="Input Components">
+       
+        InputText : <apex:inputText /><br/><br/>
+        InputSecret : <apex:inputSecret /><br/><br/>
+        InputTextArea : <apex:inputTextarea cols="40" Rows="3" /><br/><br/>
+        InputHidden : <apex:inputHidden /><br/><br/>
+        InputCheckbox : <apex:inputCheckbox /> <br/><br/>
+        <!--InputFile : <apex:inputFile required="true" /> <br/><br/>!-->
+             </apex:pageBlock>
+          <apex:pageBlock title="Picklists">
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

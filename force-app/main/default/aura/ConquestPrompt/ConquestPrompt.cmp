@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="title" type="String"/>
+    <aura:attribute name="parentId" type="String"/>
+    <aura:attribute name="type" type="String"/>
+    <aura:attribute name="recordId" type="Id"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:overlayLibrary aura:id="overlayPrompt"/>
+</aura:component>

@@ -1,0 +1,6 @@
+<aura:component >
+	<div>
+        Student Name : Ajay Dikare <br/>
+         Batch : 12 PM <br/><br/>
+    </div>
+</aura:component>

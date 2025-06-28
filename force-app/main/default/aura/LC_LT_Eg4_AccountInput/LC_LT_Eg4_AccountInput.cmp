@@ -1,0 +1,15 @@
+<aura:component controller="CL_LT_Eg3_CreateRetrieveAcc">
+	    <aura:attribute name="newAcc" type="Account[]" default="{'sObjectType':'Account'}"/>
+    <aura:registerEvent name="akshay" type="c:LE_LT_Eg3_AccountCreationEvt"/>
+    <lightning:card title="Create Account">
+        <aura:set attribute="actions">
+            <lightning:button variant="SUCCESS" label="Save" onclick="{!c.callMe}"/>
+            <lightning:button variant="Destructive" label="Clear" onclick="{!c.clearMe}"/>   
+        </aura:set>
+        <div class="inputDiv">
+        <lightning:input label="Account Name" value="{!v.newAcc.Name}"/>
+        <lightning:input label="Account Phone" value="{!v.newAcc.Phone}"/>
+        <lightning:input label="Account Rating" value="{!v.newAcc.Rating}"/>
+        </div>      
+    </lightning:card>
+</aura:component>

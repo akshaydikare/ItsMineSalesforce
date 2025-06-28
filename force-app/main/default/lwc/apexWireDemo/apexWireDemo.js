@@ -1,0 +1,33 @@
+import { LightningElement, wire } from 'lwc';
+import getAccountList from '@salesforce/apex/AccountController_ApexInLWC.getAccountList'
+import {getRecord} from 'lightning/uiRecordApi'
+export default class ApexWireDemo extends LightningElement {
+    accountList
+    
+    @wire(getAccountList)
+    accounts
+
+    
+    @wire(getAccountList)
+    accountsHandler({data, error}){
+        if(data){
+            this.accountList = data.map(item=>{
+                let newType = item.Type === 'Customer - Channel' ? 'Channel':
+                item.Type === 'Customer - Direct' ? 'Direct':'-------'
+                return {...item, newType}
+            })
+        }
+        if(error){
+            console.error(error)
+        }
+    }
+
+   
+    @wire(getRecord, {recordId:'0015j00000WFirbAAD', fields:['Account.Name', 'Account.Industry', 'Account.Rating']})
+    account({data, error}){
+        if(data){
+            console.log(data);
+        }
+        
+    }
+}

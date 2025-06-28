@@ -1,0 +1,24 @@
+<apex:page controller="emailSending">
+    <p>
+        Test Email Sending:
+    </p>
+    
+    <apex:form >
+        <div style="height:220px; width:500px;border:3px solid red;padding:20px;background:rgb(127, 208, 208)">
+            <apex:outputLabel value="Send Mail To: " for="To"/>
+            <apex:inputText style="margin-left:50px" value="{!toMail}" id="To"/><br/><br/>
+            <apex:outputLabel value="CC Mail To: " for="CC"/>
+            <apex:inputText style="margin-left:60px" value="{!ccMail}" id="CC"/><br/><br/>
+            <apex:outputLabel value="Reply Mail To: " for="rep"/>
+            <apex:inputText style="margin-left:47px" value="{!repMail}" id="rep"/><br/><br/>
+
+            <apex:outputLabel value="Subject:" for="rep"/>
+            <apex:inputTextarea style="margin-left:82px" value="{!subMail}" id="sub"/><br/><br/>
+
+            <apex:outputLabel value="Body:" for="rep"/>
+            <apex:inputTextarea style="margin-left:92px" value="{!bodyMail}" id="body"/><br/><br/>
+            <apex:commandButton action="{!sendMail}" value="Send Email"/>
+            
+        </div>
+    </apex:form>
+</apex:page>

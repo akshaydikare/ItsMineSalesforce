@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <lightning:fileUpload multiple="true" label="Raaj" onuploadfinished="{!c.handleUploadFinished}"/>
+
+    
+        <aura:attribute name="myText" type="string" default="Hello there!"/>
+	<ui:inputText label="Enter some text" value="{!v.myText}" updateOn="click"/>
+	You entered: <ui:outputText value="{!v.myText}"/>
+    
+       <lightning:input name="input1" label="Enter some text" />
+    
+    
+    
+</aura:component>

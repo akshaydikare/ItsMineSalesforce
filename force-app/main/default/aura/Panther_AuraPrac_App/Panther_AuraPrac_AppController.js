@@ -1,0 +1,67 @@
+({
+		init: function(cmp) {
+        var svgRichText = cmp.find("svgRichText");
+        svgRichText.set("v.value", "svg is not a supported tag: [<!-- I am ready now, click one of the buttons! --><svg><image id=\"v-146\" width=\"500\" height=\"500\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20height%3D%22100%22%20width%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20data-name%3D%22Layer%201%22%20id%3D%22Layer_1%22%3E%0A%20%20%3Ctitle%3ECompute%3C%2Ftitle%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20fill%3D%22%239d5025%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2224.74%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23f58536%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2222.26%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E\" preserveratio=\"true\" style=\"border-color: rgb(51, 51, 51); box-sizing: border-box; color: rgb(51, 51, 51); cursor: move; font-family: sans-serif; font-size: 14px; line-height: 20px; outline-color: rgb(51, 51, 51); text-size-adjust: 100%; column-rule-color: rgb(51, 51, 51); -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-text-emphasis-color: rgb(51, 51, 51); -webkit-text-fill-color: rgb(51, 51, 51); -webkit-text-stroke-color: rgb(51, 51, 51); user-select: none; vector-effect: non-scaling-stroke;\"></image></svg>]");
+
+        var listRichText = cmp.find("listRichText");
+        listRichText.set("v.value", "<ol><li>This list should be formatted properly</li><li>Other classes should be correctly added too</li><li><a href=\"http://www.google.com\">Link to Google</a></li></li></ol>");
+
+        var linkifyRichText = cmp.find("linkifyRichText");
+        linkifyRichText.set("v.value", "You should be able to navigate with the following links: <ul><li><a href=\"http://www.google.com\">www.google.com</a></li><li>www.salesforce.com</li><li>http://www.google.com</li><li>salesforce.com</li></ul> and this email address: email@richtext.com.");
+    },
+    
+    doClick: function(component, event, helper){
+        /*Below are the component methods*/
+        
+        //alert(component.getName());     
+        //alert(component.isValid());
+        //alert(component.getGlobalId());
+        //alert(component.getType());
+        
+        alert(component.get("v.name"));  // get() - Used to get value of from attribute.
+        component.set("v.name", "Dikare"); // set() - Used to set value to from attribute.
+         alert(component.get("v.name"));
+        
+        //Working With aura:id
+       var val = component.find("printAge");
+       alert(val.get("v.value"));
+        val.set("v.value", 56);
+        
+        
+        var map = [];
+        for(var i = 0; i<=10; i++){
+            map.push({
+                key:i,
+                value:'Test'+i
+        	});
+		}
+        component.set("v.createMap", map);
+    },
+    
+    addMe: function(component, event, helper){
+       var num1 =  component.get("v.num1");
+       var num2 =  component.get("v.num2");
+        component.set("v.output", parseInt(num1) + parseInt(num2));
+        component.set("v.isBlank", true);
+        
+    },
+     subMe: function(component, event, helper){
+         var num1 =  component.get("v.num1");
+       var num2 =  component.get("v.num2");
+        component.set("v.output", parseInt(num1) - parseInt(num2));
+         component.set("v.isBlank", true);
+    },
+     mulMe: function(component, event, helper){
+         var num1 =  component.get("v.num1");
+       var num2 =  component.get("v.num2");
+        component.set("v.output", parseInt(num1) * parseInt(num2));
+         component.set("v.isBlank", true);
+    },
+     divMe: function(component, event, helper){
+         var num1 =  component.get("v.num1");
+       var num2 =  component.get("v.num2");
+        component.set("v.output", parseInt(num1) / parseInt(num2));
+         component.set("v.isBlank", true);
+    },
+
+})

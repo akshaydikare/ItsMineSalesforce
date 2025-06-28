@@ -1,0 +1,11 @@
+<aura:component controller="AllAccounts" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" > 
+    <aura:registerEvent name="passingCurrentRecId" type="c:AccountDatatableEvent" />     
+    <aura:attribute name="accList" type="Account[]" /> 
+    <aura:attribute name="myColumns" type="List" /> 
+
+    <aura:handler name="init" value='{!this}' action="{!c.fetchAccountList}"/> 
+    <lightning:datatable columns="{! v.myColumns}" 
+                         data="{! v.accList}" 
+                         keyField="Id"  
+                         onrowaction="{!c.viewRecord}" /> 
+ </aura:component>

@@ -1,0 +1,38 @@
+<aura:component>
+        <aura:attribute name="fields" type="String[]" default="['Name','AnnualRevenue','Industry']" />
+    <lightning:recordViewForm recordId="0015j00000WFirfAAD" objectApiName="Account">
+        <div class="slds-box slds-m-around_x-small">
+                    <b>Account Record (recordViewForm)</b>
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Phone" />
+            <lightning:outputField fieldName="Industry" />
+            <lightning:outputField fieldName="Rating" />
+            <lightning:outputField fieldName="AnnualRevenue" />
+        </div>
+    </lightning:recordViewForm>
+    <hr/>
+
+    <lightning:recordEditForm recordId="0015j00000WFirfAAD" objectApiName="Account">
+        <lightning:messages />
+         <div class="slds-box slds-m-around_x-small">
+             <b>Edit Account Record (recordEditForm)</b>
+        <lightning:outputField fieldName="Name" />
+        <lightning:inputField fieldName="Name" />
+        <lightning:inputField fieldName="Phone" />
+        <lightning:inputField fieldName="Industry" />
+         <lightning:inputField fieldName="Rating" />
+         <lightning:inputField fieldName="AnnualRevenue" />
+        <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+    </div>
+        </lightning:recordEditForm>
+     <div class="slds-box slds-m-around_x-small">
+<b>Edit Account Record (recordForm)</b>
+    <lightning:recordForm
+        aura:id="myRecordForm"
+        recordId="0015j00000WFirfAAD"
+        objectApiName="Account"
+        fields="{!v.fields}"
+        columns="1"
+        mode="edit" />
+     </div> 
+</aura:component>

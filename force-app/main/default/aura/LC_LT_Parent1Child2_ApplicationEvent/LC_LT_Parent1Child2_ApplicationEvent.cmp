@@ -1,0 +1,8 @@
+<aura:component >
+	 <aura:attribute name="msg" type="string"/>
+    <aura:handler event="c:LE_LT_Eg1_ApplicationEvent" action="{!c.showMeChild2}"/>
+    
+    <lightning:card title="Parent 1 Child2">
+        Parent1 Child1 Handling: {!v.msg}
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,64 @@
+<aura:component controller="AccountsRelContatcs" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId">
+    
+    <aura:attribute name="srchaccountName" type="string"/>
+    
+    <aura:attribute name="accountId" type="string"/>
+    
+    <aura:attribute name="accountList" type="list"/>
+    <aura:attribute name="contactList" type="list"/>
+    <aura:attribute name="opportunityList" type="list"/>
+    
+    <aura:attribute name="opportunityCols" type="list"/>
+    <aura:attribute name="ContactsCols" type="list"/>
+    <aura:attribute name="AccountCols" type="list"/>
+    
+    
+    <lightning:input label="Search Account" aura:id="accountIDd" value="{!v.srchaccountName}"/>
+    <lightning:button label="Search" title="Click to search account" onclick="{!c.getAccount}" variant="brand"/>
+    
+    <lightning:card title="Account Information">
+        <!--<lightning:layout>
+         <lightning:layoutItem>
+             <p><lightning:formattedText value="{!v.accountt.Name}" /></p>
+            </lightning:layoutItem>
+            <lightning:layoutItem>
+             <p><lightning:formattedText value="{!v.accountt.Industry}" /></p>
+            </lightning:layoutItem>
+            <lightning:layoutItem>
+             <p><lightning:formattedText value="{!v.accountt.Rating}" /></p>
+            </lightning:layoutItem><lightning:layoutItem>
+             <p><lightning:formattedText value="{!v.accountt.Website}" /></p>
+            </lightning:layoutItem>
+        </lightning:layout>-->
+        <lightning:datatable
+                             keyField="id"
+                             data="{! v.accountList }"
+                             columns="{! v.AccountCols }"
+                             hideCheckboxColumn="true"/>
+        
+    </lightning:card>
+    
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="6">
+            <div style="height: 300px" class="slds-box">
+                <strong>Opportunity List</strong>
+                <lightning:datatable
+                                     keyField="id"
+                                     data="{! v.opportunityList }"
+                                     columns="{! v.opportunityCols }"
+                                     hideCheckboxColumn="true"/>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <div style="height: 300px" class="slds-box">
+                <strong>Contact List</strong>
+                <lightning:datatable
+                                     keyField="id"
+                                     data="{!v.contactList}"
+                                     columns="{!v.ContactsCols}"
+                                     hideCheckboxColumn="true"/>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+        <c:hello/>
+</aura:component>

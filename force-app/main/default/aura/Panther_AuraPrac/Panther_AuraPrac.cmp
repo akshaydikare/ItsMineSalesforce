@@ -1,0 +1,26 @@
+<aura:component controller="FetchContacts" implements="force:hasRecordId,flexipage:availableForRecordHome">
+    <aura:attribute name="contactList" type="Contact[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.contactsList}"/>
+    
+    <div>
+    <c:quickContact accountId="{!v.recordId}"/><br/>
+    </div>
+   <div class="slds-p-around_medium">
+        <div class="slds-grid slds-wrap">
+                <aura:iteration items="{!v.contactList}" var="conItem">
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+                        <lightning:card title="{!conItem.Name}" footer="{!conItem.Email}" iconName="standard:contact" >
+                            <aura:set attribute="actions">
+                                <lightning:button name="{!conItem.Id}" label="View Details" variant="brand" onclick="{!c.doRedirect}"/>
+                            </aura:set>
+                            
+                             <div class="slds-p-left_large">
+
+                            <p><strong>{!conItem.Name} </strong> -- {!conItem.Phone}</p>
+                                     </div>
+                        </lightning:card>
+                    </div>
+                </aura:iteration>  
+        </div>
+        </div>
+</aura:component>

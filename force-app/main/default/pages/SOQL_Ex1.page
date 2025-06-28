@@ -1,0 +1,21 @@
+<apex:page controller="SOQL_Ex1">
+    <apex:form >
+    	<apex:pageBlock title="Account List" id="idOne">
+            <!--<apex:outputText label="Active Accounts" value="{!activeAcc}"/>
+        <apex:outputText label="All Accounts" value="{!allAcc}"/>-->
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="All Rows" action="{!FetchAll}" reRender="idOne"/>
+                <apex:commandButton value="Limit Rows" action="{!setLimit}" reRender="idOne"/>
+                <apex:commandButton value="DynamicLimit" action="{!setDynamicLimit}" reRender="idOne"/>
+                <apex:commandButton value="Offset_5" action="{!setOffset}" reRender="idOne"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockTable value="{!accounts}" var="a">
+            	<apex:column value="{!a.name}"/>
+                 <apex:column value="{!a.phone}"/>
+                <apex:column value="{!a.industry}"/>  
+                <apex:column value="{!a.type}"/>  
+                <apex:column value="{!a.accountnumber}"/>  
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

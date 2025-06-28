@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Query Selector Demo" icon-name="utility:settings">
+        <div class="slds-m-around_medium">
+            <p>Hello</p>
+            <h1>Hello I am a headning</h1><br />
+            <button onclick={fetchDetailHandler}>FetchDetails</button>
+
+
+            <template for:each={userNames} for:item="user">
+                <div class="name" key={user}>{user}</div>
+            </template>
+            <div class="child" lwc:dom="manual">
+                
+            </div>
+
+
+            <div class="user">Akshay Dikare</div>
+        </div>
+    </lightning-card>
+
+
+</template>

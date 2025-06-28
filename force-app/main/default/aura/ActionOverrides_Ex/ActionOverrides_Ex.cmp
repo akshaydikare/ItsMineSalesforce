@@ -1,0 +1,14 @@
+<aura:component>
+    <aura:attribute name="empName" type="String"/>
+    <aura:attribute name="empCity" type="String"/>
+
+    <aura:method name="callMe" action="{!c.invoke}">
+        <aura:attribute name="name" type="String"/>
+        <aura:attribute name="city" type="String"/>
+    </aura:method>
+
+    <lightning:card title="Action Overrides Ex Child">
+        Name Entered : {!v.empName}<br/>
+        City Entered : {!v.empCity}
+    </lightning:card>
+</aura:component>

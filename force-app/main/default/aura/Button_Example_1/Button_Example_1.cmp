@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="empName" type="String"/>  
+    <aura:attribute name="salary" type="Decimal"/>
+  
+    
+    <lightning:button label ="Show" aura:id="one" onclick="{!c.show}"/>
+    <lightning:button label ="Cancel" aura:id="two" onclick="{!c.invoke}"/><br/><br/>
+    
+  
+        Employee Name : {!v.empName}<br/><br/>
+        Salary : {!v.salary}<br/>
+      
+   
+</aura:component>

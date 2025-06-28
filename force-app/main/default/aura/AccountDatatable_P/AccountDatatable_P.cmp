@@ -1,0 +1,24 @@
+<aura:component controller="AllAccounts" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" > 
+    <aura:attribute name ="selectedRecord" type="String" /> 
+    <aura:attribute name ="accountRec" type="Account" /> 
+    <aura:handler name="passingCurrentRecId" event="c:AccountDatatableEvent" action="{!c.getAcc}"/> 
+    <c:AccountDatatable_C />
+    <lightning:card title="Account Details" iconName="standard:account">
+     <lightning:recordViewForm recordId="{!v.accountRec.Id}" objectApiName="Account">
+            <div class="slds-box">
+                <lightning:outputField fieldName="Name" />
+                <lightning:outputField fieldName="Industry" />
+                 <lightning:outputField fieldName="Rating" />
+                <lightning:outputField fieldName="Phone" />
+            </div>
+        </lightning:recordViewForm>
+     </lightning:card>
+    <!--<lightning:card title="{Account Details}" iconName="standard:account">
+        <div class="slds-p-around_small">
+            <p>Account Name : <strong>{!v.account.Name}</strong></p>
+            <p>Account Industry : <strong>{!v.account.Industry}</strong></p>
+            <p>Account Rating : <strong>{!v.account.Rating}</strong></p>
+            <p>Account Phone : <strong>{!v.account.Phone}</strong></p>
+    </div>
+    </lightning:card>-->
+</aura:component>

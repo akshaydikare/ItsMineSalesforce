@@ -1,0 +1,16 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+    <!-- Begin Default Content REMOVE THIS -->
+    <h1>Congratulations</h1>
+    This is your new Page
+    <!-- End Default Content REMOVE THIS -->
+    <apex:form >
+        <apex:pageBlock title="Account List">
+            <apex:pageBlockTable value="{!accounts}" var="a">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Phone}"/>
+                <apex:column value="{!a.Rating}"/>
+                <apex:column value="{!a.Industry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

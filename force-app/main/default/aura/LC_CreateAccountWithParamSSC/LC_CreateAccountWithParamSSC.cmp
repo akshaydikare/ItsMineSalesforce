@@ -1,0 +1,35 @@
+<aura:component controller="CL_LT_CreateAccount" >
+    <!--<lightning:button label="Create Account" onclick="{!c.Callme}"/>--> <!-- This c. refers to the CSC(Client Side Controller)-->
+    
+    <aura:attribute name="name" type="String"/>
+    <aura:attribute name="rating" type="String"/>
+    <aura:attribute name="phone" type="String"/> 
+    <aura:attribute name="industry" type="String"/>
+    <aura:attribute name="result" type="String"/>
+    <aura:attribute name="flag" type="Boolean" default="false"/>
+    
+    <lightning:card title="Account Creation">   
+        <aura:set attribute="actions">
+            <lightning:button label="Create Account" onclick="{!c.Callme}"/>
+            <lightning:button label="Clear" onclick="{!c.Reset}"/>
+        </aura:set>
+        <lightning:layout>
+            <lightning:layoutItem size="6" padding="around-small">
+                <lightning:input label="Account Name" value="{!v.name}"/>
+                <lightning:input label="Account Rating" value="{!v.rating}"/>
+                <lightning:input label="Account Phone" value="{!v.phone}"/>
+                <lightning:input label="Account Industry" value="{!v.industry}"/>
+            </lightning:layoutItem>
+            
+            <aura:if isTrue="{!v.flag}">
+                <lightning:layoutItem size="6" padding="around-small">
+                    Account Name Entered is: {!v.name} <br/>
+                    Account Rating: {!v.rating}<br/>
+                    Account Phone: {!v.phone}<br/>
+                    Account Industry: {!v.industry}<br/>
+                    Result: {!v.result}<br/>
+                </lightning:layoutItem>
+            </aura:if>            
+        </lightning:layout>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,29 @@
+<apex:page controller="CL_DML_Ex2">
+    <apex:form >
+        <apex:pageMessages />
+    	<apex:pageBlock title="DML Insert Example" id="pb">
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="Create" action="{!create}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" reRender="pb"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+            	<apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Name"/>
+                    <apex:inputtext value="{!accName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Phone"/>
+                    <apex:inputtext value="{!phone}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Industry"/>
+                    <apex:inputtext value="{!industry}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Rating"/>
+                    <apex:inputtext value="{!rating}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

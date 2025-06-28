@@ -1,0 +1,28 @@
+<apex:page controller="SOQL_LeadSearchList">
+    <apex:form id="leadId">
+    	<apex:pageBlock title="Search Data">
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Search Leads" action="{!searchLeads}" reRender="leadId"/>
+                <apex:commandButton value="Dynamic Ledsa" action="{!dynamicLeads}" reRender="leadId"/>
+            </apex:pageBlockButtons>
+			<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Lead Email"/>
+                    <apex:inputText value="{!leadEmail}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Lead Phone"/>
+                    <apex:inputText value="{!leadPhone}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>     
+            </apex:pageBlock>
+        <apex:pageBlock title="Lead List" >
+        	<apex:pageBlockTable value="{!leads}" var="a">
+            	<apex:column value="{!a.lastname}"/>
+                 <apex:column value="{!a.firstname}"/>
+                <apex:column value="{!a.email}"/>  
+                <apex:column value="{!a.phone}"/>  
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page sidebar="true">
+    <apex:sectionHeader title="Student" subtitle="New Student" description="Student Description" />
+    <br/>
+    Student Name : Akshay <br/><br/>
+    Student Email : akshay@gmail.com <br/><br/>
+    Student Phone : 9921523454 <br/>
+</apex:page>

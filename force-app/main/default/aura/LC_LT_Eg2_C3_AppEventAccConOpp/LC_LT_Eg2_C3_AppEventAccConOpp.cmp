@@ -1,0 +1,14 @@
+<aura:component controller="CL_Eg1_EventApplicationAccConOpp">
+	<aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="flag" type="Boolean" default="false"/>
+    
+    <aura:handler event="c:LE_LT_Eg2_AppEventAccConOpp" action="{!c.callMe}"/>
+    
+    <aura:if isTrue="{!v.flag}">
+        <h1><b>Opportunity List</b></h1>
+        <hr/>
+        <lightning:dataTable keyField="Id" data="{!v.data}" columns="{!v.columns}"/>
+    </aura:if>
+    
+</aura:component>

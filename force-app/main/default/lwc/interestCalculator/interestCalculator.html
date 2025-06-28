@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Simple Interest Calculator" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <lightning-input label="Enter Amount" name="amount" onchange={captureData} value={amount}></lightning-input>
+            <lightning-input label="Enter Term" name="time" onchange={captureData} value={time}></lightning-input>
+            <lightning-input label="Enter Rate" name="rate" onchange={captureData} value={rate}></lightning-input>
+        
+     <div class="slds-var-m-around_small">
+        <lightning-button label="Calculate" onclick={calculateInterest} variant="info"></lightning-button>
+        <lightning-button label="Clear" onclick={clearForm} variant="destructive"></lightning-button>
+     </div>
+          
+        
+        <p><strong>Interest: {interest}</strong></p>
+        <p><strong>Total maturty amount: {TotalMaturityAmount}</strong></p>
+        </div>
+
+        
+        <!-- <lightning-input label="Enter Amount" name="amount" onchange={captureData}></lightning-input>
+        <lightning-input label="Enter Amount" name="amount" onchange={captureData}></lightning-input> -->
+    </lightning-card>
+</template>

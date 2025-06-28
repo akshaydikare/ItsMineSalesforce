@@ -1,0 +1,6 @@
+<aura:component >
+	<div>
+        Course Name : SFDC <br/>
+         Batch : 8AM <br/>
+    </div>
+</aura:component>

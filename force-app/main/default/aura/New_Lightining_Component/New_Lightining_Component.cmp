@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	    <aura:attribute name="empName" type="String"/>  
+    <aura:attribute name="salary" type="Decimal"/>
+  
+    
+    <lightning:button label ="Show" aura:id="one" onclick="{!c.show}"/>
+    <lightning:button label ="Cancel" aura:id="two" onclick="{!c.invoke}"/><br/><br/>
+    
+  
+        Employee Name : {!v.empName}<br/><br/>
+        Salary : {!v.salary}<br/>
+      
+    <hr/>
+ <div class="firstClass">
+        Student Name : Abhinav Potdar<br/>
+        Student Gender : Male<br/>
+        Age : 28<br/>
+        College Name : SKN SCOE, Pandharpur<br/>
+        Total Fees : 70000<br/><br/>
+    </div>
+</aura:component>

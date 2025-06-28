@@ -1,0 +1,5 @@
+@import 'c/cssSharedLibrary';
+.html{
+    width:80%;
+    background-color: greenyellow;
+}

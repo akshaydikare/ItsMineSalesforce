@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,force:lightningQuickAction">
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="record" type="Object"/>x
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="message" type="Map" default="{'show':false}"/>
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    <!-- Use for 'yes/no' prompts for create and update plan button clicks -->
+    <aura:handler event="c:AppLevelEvent" action="{!c.handleConquestEvent}"/>
+ 
+    <div class="slds-is-relative" style="position:relative">
+        <lightning:card title="Conquest Financial Planning" iconName="standard:decision">
+            <aura:set attribute="actions">
+                <!-- display 'Create Plan' button if record.PlanId == null otherwise display 'Update Plan' button-->
+                    <lightning:button name="createPlanBtn" label="Create Plan" onclick="{!c.handleCreatePlanClick}" title="This is the tooltip for creating the plan."/>       
+            </aura:set>
+        </lightning:card>
+    </div>    
+</aura:component>

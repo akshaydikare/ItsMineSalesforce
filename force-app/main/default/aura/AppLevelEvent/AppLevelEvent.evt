@@ -1,0 +1,6 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="parentId"  type="String"/>
+    <aura:attribute name="recordId"  type="Id"/>
+    <aura:attribute name="type" type="String"/>
+    <aura:attribute name="value" type="Boolean"/>
+</aura:event>

@@ -1,0 +1,12 @@
+<aura:component>
+    <aura:attribute name="parentId" type="String"/>
+    <aura:attribute name="type" type="String"/>
+    <aura:attribute name="recordId" type="Id"/>
+    
+    <aura:registerEvent name="conquestEvent" type="c:AppLevelEvent" />
+
+    <lightning:overlayLibrary aura:id="overlayPrompt"/>
+
+    <lightning:button name="cancel" label="No" onclick="{!c.handleCancel}"/>
+    <lightning:button name="accept" label="Yes" variant="brand" onclick="{!c.handleAccept}"/>
+</aura:component>

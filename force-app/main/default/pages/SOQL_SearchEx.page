@@ -1,0 +1,29 @@
+<apex:page controller="SOQL_Ex2">
+    <apex:form id="idOne">
+    	<apex:pageBlock title="Search Data">
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Serach" action="{!search}" reRender="idOne"/>
+                <apex:commandButton value="Dynamic" action="{!callMe}" reRender="idOne"/>
+            </apex:pageBlockButtons>
+			<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Name"/>
+                    <apex:inputText value="{!accountName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Industry"/>
+                    <apex:inputText value="{!industry}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>     
+            </apex:pageBlock>
+        <apex:pageBlock title="Account List" >
+        	<apex:pageBlockTable value="{!accounts}" var="a">
+            	<apex:column value="{!a.name}"/>
+                 <apex:column value="{!a.phone}"/>
+                <apex:column value="{!a.industry}"/>  
+                <apex:column value="{!a.type}"/>  
+                <apex:column value="{!a.accountnumber}"/>  
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

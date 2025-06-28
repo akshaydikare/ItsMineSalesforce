@@ -1,0 +1,15 @@
+<aura:component controller="CL_LT_Eg3_CreateRetrieveAcc">
+    <aura:attribute name="accounts" type="List" default="[]" />  
+     <aura:attribute name="columns" type="List"/>  
+    <aura:handler name="akshay" event="c:LE_LT_Eg3_AccountCreationEvt" action="{!c.showMe}"/>
+      <aura:handler name="init" value="{!this}" action="{!c.loadColumns}"/>
+    <div class="box">
+        <c:LC_LT_Eg4_AccountInput/>
+    </div>
+    
+    <br/>
+    <br/>
+    <br/>
+    
+    <lightning:dataTable keyField="Id" data="{!v.accounts}" columns="{!v.columns}" hideCheckboxColumn="false"/>
+</aura:component>

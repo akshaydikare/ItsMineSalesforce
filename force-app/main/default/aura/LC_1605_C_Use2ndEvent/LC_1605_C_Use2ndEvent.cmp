@@ -1,0 +1,10 @@
+<aura:component>
+
+<aura:registerEvent name="second" type="c:LE_1605_2ndEvent"/>
+<aura:attribute name="nm" type="string"/>
+<lightning:card title="child cmp" class="slds-m-around_medium">
+ This is a child cmp!
+ <lightning:input label="Enter the name: " value="{!v.nm}"/>
+ <lightning:button label="Submit" onclick="{!c.callMe}"/>
+</lightning:card>
+</aura:component>

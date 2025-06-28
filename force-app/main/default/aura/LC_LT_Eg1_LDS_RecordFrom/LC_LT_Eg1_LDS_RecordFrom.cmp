@@ -1,0 +1,47 @@
+<aura:component >
+    <lightning:layout>
+        <lightning:layoutItem size="6">
+            <lightning:recordViewForm recordId="0015j00000WFirkAAD" objectApiName="Account">
+                <lightning:outputField fieldName="Name" />
+                <lightning:outputField fieldName="Phone" />
+                <lightning:outputField fieldName="Rating" />
+                <lightning:outputField fieldName="Industry" />
+            </lightning:recordViewForm>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:recordEditForm recordId="0015j00000WFirkAAD" objectApiName="Account">
+                <lightning:inputField fieldName="Name" />
+                <lightning:inputField fieldName="Phone" />
+                <lightning:inputField fieldName="Rating" />
+                <lightning:inputField fieldName="Industry" />
+            </lightning:recordEditForm>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <br/>
+    <br/>
+    
+    <lightning:layout>
+        <lightning:layoutItem size="4">
+            <lightning:recordForm
+                                  recordId="0015j00000WFirkAAD"
+                                  objectApiName="Account"
+                                  layoutType="Full"
+                                  mode="view" />
+        </lightning:layoutItem>
+        <lightning:layoutItem size="4">
+            <lightning:recordForm
+                                  recordId="0015j00000WFirkAAD"
+                                  objectApiName="Account"
+                                  layoutType="Full"
+                                  mode="edit" />
+        </lightning:layoutItem>
+        <lightning:layoutItem size="4">
+            <lightning:recordForm
+                                  recordId="0015j00000WFirkAAD"
+                                  objectApiName="Account"
+                                  layoutType="Full"
+                                  mode="readonly" />
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+</aura:component>

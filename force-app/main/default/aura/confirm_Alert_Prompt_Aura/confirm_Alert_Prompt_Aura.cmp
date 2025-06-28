@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    
+        <aura:import library="lightning:confirm" property="LightningConfirm" />
+        <lightning:button onclick="{! c.openConfirm }" label="Open Confirm"/>
+        <br/>
+
+        <aura:import library="lightning:alert" property="LightningAlert" />
+        <lightning:button onclick="{! c.openAlert }" label="Open Alert"/>
+        <br/>
+
+        <aura:import library="lightning:prompt" property="LightningPrompt" />
+        <lightning:button onclick="{! c.openPrompt }" label="Open Prompt"/>
+    
+</aura:component>

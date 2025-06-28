@@ -1,0 +1,159 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="AccountController_Pagination">
+     
+    <!--Declare Attributes-->
+    <aura:attribute name="accounts" type="List"/>
+    <aura:attribute name="pageNumber" type="integer" default="1"/>
+    <aura:attribute name="pageSize" type="integer" default="10"/>
+    <aura:attribute name="totalPages" type="integer" default="0"/>
+    <aura:attribute name="totalRecords" type="integer" default="0"/>
+    <aura:attribute name="recordStart" type="integer" default="0"/>
+    <aura:attribute name="recordEnd" type="integer" default="0"/>
+     
+    <aura:attribute name="isSortByName" type="Boolean" default="false"/>
+    <aura:attribute name="isSortByAccNo" type="Boolean" default="false"/>
+    <aura:attribute name="isSortByIndustry" type="Boolean" default="false"/>
+    <aura:attribute name="isSortByPhone" type="Boolean" default="false"/>
+    <aura:attribute name="isSortAsc" type="Boolean" default="true"/>
+    <aura:attribute name="selectedSortingField" type="String" default="Name"/>
+     
+    <!--Declare Handlers-->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+     
+    <!--Component Start-->
+    <div class="slds-m-around_xx-large">
+        <lightning:card>
+            <aura:set attribute="title">
+                Accounts
+            </aura:set>
+            <aura:set attribute="footer">
+                <div class="slds-align_absolute-center"> 
+                    <div class="slds-p-right_xx-small">
+                         
+                        <lightning:button label="Prev"
+                                          onclick="{!c.handlePrev}"
+                                          disabled="{! v.pageNumber == 1}"
+                                          variant="brand"
+                                          iconName="utility:back"
+                                          name="prev"/>
+                    </div>
+                    <span class="slds-badge slds-badge_lightest">
+                        {!v.recordStart}-{!v.recordEnd} of {!v.totalRecords} | Page {!v.pageNumber} of {!v.totalPages}
+                    </span>
+                    <div class="slds-p-left_xx-small">
+                        <lightning:button label="Next"
+                                          disabled="{!v.pageNumber == v.totalPages}"
+                                          onclick="{!c.handleNext}"
+                                          variant="brand"
+                                          iconName="utility:forward"
+                                          iconPosition="right"
+                                          name="next"/>
+                    </div>
+                </div>  
+                 
+            </aura:set>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset slds-text-title_caps">
+                        <th style="width:30%" data-record="Name" class="slds-is-resizable" scope="col" onclick="{!c.handleSorting}">
+                            <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                                <span class="slds-assistive-text">Sort</span>
+                                <span class="slds-truncate" title="Name">Name</span>
+                                <aura:if isTrue="{!v.isSortByName}">
+                                    <aura:if isTrue="{!v.isSortAsc}">
+                                        &#9650;
+                                        <aura:set attribute="else">
+                                            &#9660;
+                                        </aura:set>
+                                    </aura:if> 
+                                </aura:if>
+                            </a>
+                        </th>
+                        <th style="width:20%"  data-record="AccountNumber" class="slds-is-resizable" scope="col" onclick="{!c.handleSorting}">
+                            <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                                <span class="slds-assistive-text">Sort</span>
+                                <span class="slds-truncate" title="Account Number">Account Number</span>
+                                <aura:if isTrue="{!v.isSortByAccNo}">
+                                    <aura:if isTrue="{!v.isSortAsc}">
+                                        &#9650;
+                                        <aura:set attribute="else">
+                                            &#9660;
+                                        </aura:set>
+                                    </aura:if> 
+                                </aura:if>
+                            </a>
+                        </th>
+                        <th style="width:20%"  data-record="Industry" class="slds-is-resizable" scope="col" onclick="{!c.handleSorting}">
+                            <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                                <span class="slds-assistive-text">Sort</span>
+                                <span class="slds-truncate" title="Industry">Industry</span>
+                                <aura:if isTrue="{!v.isSortByIndustry}">
+                                    <aura:if isTrue="{!v.isSortAsc}">
+                                        &#9650;
+                                        <aura:set attribute="else">
+                                            &#9660;
+                                        </aura:set>
+                                    </aura:if> 
+                                </aura:if>
+                            </a>
+                        </th>
+                        <th style="width:20%"  data-record="Phone" class="slds-is-resizable" scope="col" onclick="{!c.handleSorting}">
+                            <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                                <span class="slds-assistive-text">Sort</span>
+                                <span class="slds-truncate" title="Phone">Phone</span>
+                                <aura:if isTrue="{!v.isSortByPhone}">
+                                    <aura:if isTrue="{!v.isSortAsc}">
+                                        &#9650;
+                                        <aura:set attribute="else">
+                                            &#9660;
+                                        </aura:set>
+                                    </aura:if> 
+                                </aura:if>
+                            </a>
+                        </th>
+                        <th scope="col" style="width:10%">
+                             
+                        </th>
+                    </tr>
+                </thead>
+                <aura:if isTrue="{!not(empty(v.accounts))}">
+                    <tbody>
+                        <aura:iteration items="{!v.accounts}" var="acc">
+                            <tr class="slds-hint-parent">
+                                 
+                                <th data-label="Name" scope="row">
+                                    <div class="slds-truncate" title="{!acc.Name}">
+                                        {!acc.Name}
+                                    </div>
+                                </th>
+                                <td data-label="Account Number">
+                                    <div class="slds-truncate" title="{!acc.AccountNumber}">{!acc.AccountNumber}</div>
+                                </td>
+                                <td data-label="Industry">
+                                    <div class="slds-truncate" title="{!acc.Industry}">{!acc.Industry}</div>
+                                </td>
+                                <td data-label="Phone">
+                                    <div class="slds-truncate" title="{!acc.Phone}">{!acc.Phone}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-align_absolute-center">
+                                        <lightning:buttonMenu alternativeText="Show menu" menuAlignment="auto" onselect="{!c.handleRowAction}" value="{!acc.Id}">
+                                            <lightning:menuItem value="edit" label="Edit" iconName="utility:edit" title="Edit" />
+                                            <lightning:menuItem value="view" label="View" iconName="utility:description" title="View" />
+                                        </lightning:buttonMenu>
+                                    </div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </aura:if>
+            </table>
+            <aura:if isTrue="{!empty(v.accounts)}">
+                <div class="slds-align_absolute-center">
+                    No records found
+                </div>
+            </aura:if>
+        </lightning:card>
+    </div>
+    <!--Component End-->
+     
+</aura:component>

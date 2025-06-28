@@ -1,0 +1,6 @@
+<aura:component >
+    <big style="color:red">Institute : <i>CapitalInfo</i></big><br/><br/>
+    <c:Child_Component1/>
+     <c:Child_Component2/>
+     <c:Child_Component3/>
+</aura:component>

@@ -1,0 +1,55 @@
+<apex:page controller="Picklist_Examples">
+    <apex:form >
+       <apex:pageBlock title="Picklists, Radio, Checkbox" id="one">
+           <apex:pageBlockButtons location="top" dir="RTL">
+           <apex:commandButton value="Submit" reRender="one"/>
+           </apex:pageBlockButtons>
+           <apex:pageBlockSection title="Picklist">
+        City : 
+           <apex:selectList size="1" value="{!selected}">
+               <apex:selectOption itemLabel="-none-" itemValue="none"/>
+               <apex:selectOption itemLabel="Hyd" itemValue="TG"/>
+               <apex:selectOption itemLabel="Ban" itemValue="KA"/>
+               <apex:selectOption itemLabel="Che" itemValue="TN"/>             
+               <apex:selectOption itemLabel="Pune" itemValue="MH"/>
+               <apex:selectOption itemLabel="Kan" itemValue="UP"/>
+           </apex:selectList>        
+</apex:pageBlockSection>        
+        <apex:pageBlockSection title="Picklist-Multiselect">
+        City : 
+           <apex:selectList multiselect="true" value="{!myValues}">
+               <apex:selectOption itemLabel="-none-" itemValue="none"/>
+               <apex:selectOption itemLabel="Hyd" itemValue="TG"/>
+               <apex:selectOption itemLabel="Ban" itemValue="KA"/>
+               <apex:selectOption itemLabel="Che" itemValue="TN"/>             
+               <apex:selectOption itemLabel="Pune" itemValue="MH"/>
+               <apex:selectOption itemLabel="Kan" itemValue="UP"/>
+           </apex:selectList>        
+        </apex:pageBlockSection>
+          
+          <apex:pageBlockSection title="Radio">
+        Gender : 
+           <apex:selectRadio value="{!gender}">
+             <apex:selectOption itemLabel="Male" itemValue="Male"/>
+               <apex:selectOption itemLabel="Female" itemValue="Female"/>
+             </apex:selectRadio>     
+         </apex:pageBlockSection>
+        
+       <apex:pageBlockSection title="Checkboxes">
+        Course : 
+           <apex:selectCheckboxes value="{!course}">
+             <apex:selectOption itemLabel="Java" itemValue="Java"/>
+               <apex:selectOption itemLabel="DotNet" itemValue="DotNet"/>
+               <apex:selectOption itemLabel="Salesforce" itemValue="Salesforce"/>
+               <apex:selectOption itemLabel="Python" itemValue="Python"/>
+             </apex:selectCheckboxes>            
+        </apex:pageBlockSection>
+           <apex:pageBlockSection title="Chosed Values">
+               Picklists : {!selected}<br/>
+               Multi-Select : {!myValues}<br/>
+               Radio : {!gender}<br/>
+               Checkbox : {!course}
+           </apex:pageBlockSection>
+        </apex:pageBlock>
+        </apex:form>
+</apex:page>

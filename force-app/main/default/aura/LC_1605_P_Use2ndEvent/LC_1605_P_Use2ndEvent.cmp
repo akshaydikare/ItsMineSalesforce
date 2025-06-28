@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:handler name="second" event="c:LE_1605_2ndEvent" action="{!c.showMe}"/>
+    <lightning:card title="Parent cmp" class="slds-m-around_medium">
+ This is a Parent cmp!
+</lightning:card>
+<c:LC_1605_C_Use2ndEvent/>
+</aura:component>

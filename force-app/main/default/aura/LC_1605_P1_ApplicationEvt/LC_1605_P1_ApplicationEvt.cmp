@@ -1,0 +1,3 @@
+<aura:component>
+<aura:attribute name='msg' type="String"/>
+</aura:component>

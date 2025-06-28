@@ -1,0 +1,20 @@
+<apex:page standardController="Student__c" sidebar="true">
+    <apex:pageBlock title="Student View Page">
+    
+        <apex:pageBlockSection collapsible="true" title="Important Fileds">      
+            <apex:outputField value="{!Student__c.Student_Name__c}"/>
+            <apex:outputField value="{!Student__c.Registration_Fees__c}"/>
+            <apex:outputField value="{!Student__c.Student_Email__c}"/>
+            <apex:outputField value="{!Student__c.Birthdate__c}"/>
+            <apex:outputField value="{!Student__c.Graduated__c}"/>
+            <apex:outputField value="{!Student__c.Stream_Opted__c}"/>
+            <apex:outputField value="{!Student__c.Course_Opted__c}"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection collapsible="true" title="Big Fileds">       
+            <apex:outputField value="{!Student__c.Description__c}"/>
+            <apex:outputField value="{!Student__c.Resume__c}"/>
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+</apex:page>

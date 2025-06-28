@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="LWC Directives : @Track">
+        <div class="slds-var-m-around_small">
+            <lightning-input type="text" label="Enter City" onkeyup={handleCityChange}></lightning-input>
+            <b>My City is : {trackObject.city} AND Age of city is : {trackObject.age} </b>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="LWC : Getters">
+        <div class="slds-var-m-around_small">
+            <h1>Multiplication of the {num1} AND {num2} is {multiplyGetter}</h1>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="LWC Looping : for:each">
+        <div class="slds-var-m-around_small">
+            <ul class="slds-has-dividers_around-space">
+                <template for:each={cars} for:item="car">
+                    <li key={car.color} class="slds-item">{car.color} ==> {car.type} ==> {car.registration} </li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="LWC Looping : Iterator">
+        <div class="slds-var-m-around_medium">
+            <ul class="slds-has-dividers_around-space">
+                <template iterator:car={cars}>
+                    <li key={car.value.color}>
+                        <template if:true={car.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>List of top cars and their types</strong>
+                            </div>
+                        </template>
+                        
+                        <div class="slds-item">
+                            <strong>{car.value.color}  </strong>
+                            {car.value.type}
+                        </div>
+     
+                        <template if:true={car.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>Thanks for reading the list</strong>
+                            </div>
+                        </template>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template>

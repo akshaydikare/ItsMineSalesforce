@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="All Cases">
+        <!-- <div class="slds-p-around_medium">
+            <template if:true={allCases.data}>
+                <template for:each={allCases.data} for:item="casee">
+                    <div class="slds-box slds-box-xx_small" key={casee.id}>
+                        <p>{casee.CaseNumber} :- <strong>{casee.Origin} | {casee.Reason} | {casee.ClosedDate}</strong> </p> 
+                    </div>
+                </template>
+            </template>
+        </div>        -->
+
+        <div class="slds-p-around_medium">
+            
+        <lightning-combobox
+        name="origin"
+        label="Case Origin"
+        value={selectedOrigin}
+        placeholder="Select Origin"
+        options={originOptions}
+        onchange={handleChange} ></lightning-combobox><br/>
+
+            <template if:true={allCasesList}>
+                <template for:each={allCasesList} for:item="casee">
+                    <div class="slds-box slds-box-xx_small" key={casee.id}>
+                        <p>{casee.CaseNumber} :- <strong>{casee.Origin} | {casee.Reason} | {casee.newDate}</strong> </p> 
+                    </div>
+                </template>
+            </template>
+        </div>    
+           
+    </lightning-card>
+
+<lightning-card title="Badge Examples">
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Badges with custom <code>label</code> attribute values.
+        </h2>
+
+        <!-- Badge: basic -->
+        <lightning-badge label="Alpha" class="slds-badge_inverse"></lightning-badge>
+        <lightning-badge label="Beta"></lightning-badge>
+        <lightning-badge label="Gamma"></lightning-badge>
+    </div>
+</lightning-card>
+
+
+
+</template>

@@ -1,0 +1,22 @@
+<aura:component controller="CasesController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="data" type="List" />
+    
+    <aura:attribute name="url" type="String"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:navigation aura:id="navService"/>
+   
+      <lightning:card variant="Narrow">
+        <p class="slds-p-horizontal_small">
+          <a href="{!v.url}">{!v.url}</a>
+        </p>
+    </lightning:card>
+
+    <lightning:datatable
+                         keyField="Id"
+                         data="{!v.data}"
+                         columns="{!v.columns}"
+                         onrowselection="{!c.handleRowSelection}"
+                         hideCheckboxColumn="false"/>
+</aura:component>

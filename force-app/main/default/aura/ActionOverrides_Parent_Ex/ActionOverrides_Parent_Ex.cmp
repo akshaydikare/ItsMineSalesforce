@@ -1,0 +1,11 @@
+<aura:component>
+
+<aura:attribute name="en" type="String"/>
+<aura:attribute name="ec" type="String"/>
+    <c:ActionOverrides_Ex aura:id="one"/>
+
+    <lightning:button label="Submit" onclick="{!c.show}"/>
+
+<lightning:input type="text" label="Employee Name" value="{!v.en}"/>
+<lightning:input type="text" label="Employee City" value="{!v.ec}"/>
+</aura:component>

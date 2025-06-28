@@ -1,0 +1,7 @@
+<aura:component >
+	<div class="container">
+        Name : AKshay Dikare <br/>
+        Gender : Male <br/>
+        Age : 24 <br/><br/>
+    </div>
+</aura:component>

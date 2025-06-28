@@ -1,0 +1,5 @@
+@import 'c/cssSharedLibrary';
+.css{
+    width:70%;
+    background-color: goldenrod;
+}

@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="getObjectInfoApi Wire Adapter">
+        <div class="slds-var-m-around_medium">
+            <div style="background:grey;color:lawngreen">Logged In User ID : {UserId}</div>
+            <template for:each={childRelationships} for:item="childObj">
+                <div key={childObj.childObjectApiName}>
+                    <p><strong>{childObj.childObjectApiName}</strong> - {childObj.relationshipName}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

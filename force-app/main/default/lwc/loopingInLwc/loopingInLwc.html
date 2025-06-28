@@ -1,0 +1,53 @@
+<template>
+
+    <lightning-card title="for:each Looping" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <template for:each={carList} for:item=car>
+                <!-- <p key={car}>{car}</p> -->
+                <ul key={car} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{car}</li>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+    
+    <lightning-card title="for:each Looping" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <template for:each={studnetList} for:item=stud>
+                <ul key={stud.id} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{stud.name} : {stud.school}</li>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="iterator Looping" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <template iterator:it={ceoList}>
+                <div key={it.value.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <template if:true={it.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    List of top Companies and there CEO's.
+                                </strong>
+                            </div>
+                        </template>
+                        <li class="slds-item">
+                            <strong>Company Name: {it.value.company}</strong><br/>
+                       CEO Name: {it.value.name}
+                        </li>
+                        <template if:true={it.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    Thank you for reading the list.
+                                </strong>
+                            </div>
+                        </template>
+                    </ul>
+                </div>
+                
+            </template>
+        </div>
+    </lightning-card>
+</template>

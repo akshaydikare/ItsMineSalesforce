@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:registerEvent name="first" type="c:LE_LT_Eg1_BasicEvent"/>
+    <lightning:card title="Parent Component">
+        I am the child component<br/>
+        I am the child component<br/>
+        
+        <lightning:button label="submit" onclick="{!c.callMe}"/>
+    </lightning:card>
+</aura:component>

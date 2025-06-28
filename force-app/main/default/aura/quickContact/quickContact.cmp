@@ -1,0 +1,21 @@
+<aura:component controller="FetchContacts" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+    <aura:attribute name="accountId" type="String" />
+      <aura:attribute name="ErroMessage" type="String" />
+    <aura:attribute name="CreateContact" type="Contact" default="{
+                                                                 sObjectName: 'Contact',
+                                                                 FirstName:'',
+                                                                 LastName:'',
+                                                                 Email:'',
+                                                                 Phone:''}"/>
+    <lightning:card title="Quick Contact">
+    <p>{!v.ErroMessage}</p><br/>
+    <div class="slds-p-around_small">
+        <lightning:input type="text" value="{!v.CreateContact.FirstName}" label="First Name"/>
+        <lightning:input type="text" value="{!v.CreateContact.LastName}" label="Last Name" required="true"/>
+        <lightning:input type="email" value="{!v.CreateContact.Email}" label="Email"/>
+        <lightning:input type="phone" value="{!v.CreateContact.Phone}" label="Phone"/>
+         
+        <lightning:button label="Create Contact" variant="brand" onclick="{!c.doSaveContact}" />
+    </div>
+        </lightning:card>
+</aura:component>

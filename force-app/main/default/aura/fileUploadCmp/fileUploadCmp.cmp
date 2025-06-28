@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg', '.pdf']" />
+    <aura:attribute name="multiple" type="Boolean" default="true" />
+    <aura:attribute name="disabled" type="Boolean" default="true" />
+    <aura:attribute name="recordId" type="String" />
+        <aura:attribute name="fileNameList" type="String[]"/>
+    <lightning:card title="File Upload" class="slds-var-p-around_medium">
+        <lightning:fileUpload label="Attach receipt"
+        name="fileUploader"
+        multiple="true"
+        accept="{!v.filetype}"
+        onuploadfinished="{!c.handleUploadFinished}" />
+    </lightning:card>
+
+    
+    <div>
+        <lightning:card title="Uploaded file names" class="slds-var-p-around_medium">
+   		<div class="slds-box">
+            <aura:iteration items="{!v.fileNameList}" var="item">
+                <p><strong>{!item}</strong></p><br/>
+            </aura:iteration>
+        </div>
+             </lightning:card>
+
+    </div>
+</aura:component>

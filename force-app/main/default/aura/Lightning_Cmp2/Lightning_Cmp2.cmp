@@ -1,0 +1,6 @@
+<aura:component >
+	<div style="color:red">
+        Education :BE Mech <br/>
+        Profession : Software Engineer <br/>
+    </div>
+</aura:component>

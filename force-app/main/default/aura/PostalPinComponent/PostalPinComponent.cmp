@@ -1,0 +1,25 @@
+<aura:component controller="PostalDepartmentAPI"
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+    access="global">
+    <aura:attribute name="indiapostlist" type="list"></aura:attribute>
+    <aura:attribute name="searchPin" type="string"></aura:attribute>
+    <aura:attribute name="searchBranch" type="string"></aura:attribute>
+    <aura:attribute name="postalColumns" type="list"></aura:attribute>
+
+    <lightning:card title="Search By PIN or Area">
+        <div class="slds-var-m-around_medium">
+            <lightning:input name="postalpin" value="{!v.searchPin}"
+                label="Please Enter PIN Code to search post office details" max="999999"></lightning:input>
+            <lightning:input name="postalBranch" value="{!v.searchBranch}"
+                label="Please Enter Post office branch to search post office details"></lightning:input>
+            <br />
+            <lightning:button variant="success" label="Get Postal Details" title="Get Postal Details"
+                onclick="{!c.invokePostalAPI}" />
+        </div>
+    </lightning:card>
+
+    <lightning:card title="Postal List">
+        <lightning:datatable keyField="id" data="{!v.indiapostlist}" columns="{!v.postalColumns}"
+            hideCheckboxColumn="true" />
+    </lightning:card>
+</aura:component>

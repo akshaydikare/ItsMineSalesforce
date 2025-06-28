@@ -1,0 +1,15 @@
+<apex:page controller="AccountSaveFieldSet">
+    <apex:form >
+        <apex:pageBlock title="Apex FieldSet Demo">
+            <apex:pageBlockSection >
+                <apex:repeat value="{!fieldList}" var="field">
+                    <apex:inputField value="{!accObj[field]}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!AccountSave}"></apex:commandButton>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

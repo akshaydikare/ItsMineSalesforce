@@ -1,0 +1,15 @@
+<!--initCmp.cmp-->
+<aura:component>
+    <aura:attribute name="setMeOnInit" type="String" default="default value" />
+    
+    <aura:attribute name="setMeOnRender" type="String" default="default value" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="render" value="{!this}" action="{!c.doRender}"/>
+    
+    <p>This value is set in the controller after the component initializes and before rendering.</p>
+    <p><b>{!v.setMeOnInit}</b></p>
+    
+    <p>This value is set in the controller after the component initializes and after rendering.</p>
+    <p><b>{!v.setMeOnRender}</b></p>
+    
+</aura:component>

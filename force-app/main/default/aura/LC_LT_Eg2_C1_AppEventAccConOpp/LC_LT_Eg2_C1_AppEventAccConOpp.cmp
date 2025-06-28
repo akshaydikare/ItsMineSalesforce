@@ -1,0 +1,11 @@
+<aura:component controller="CL_Eg1_EventApplicationAccConOpp">
+	<aura:attribute name="accName" type="String"/>
+    <aura:attribute name="accIndustry" type="String"/>
+    <aura:registerEvent name="akshayEvent" type="c:LE_LT_Eg2_AppEventAccConOpp"/>
+    <lightning:card title="Search Account">
+        <lightning:input label="Account Name" value="{!v.accName}"/>
+        <lightning:input label="Account Industry" value="{!v.accIndustry}"/>
+        <br/>
+        <lightning:button label="Search" onclick="{!c.searchMe}"/>
+    </lightning:card>
+</aura:component>

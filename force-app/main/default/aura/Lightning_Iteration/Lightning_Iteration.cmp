@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	 <aura:iteration items="1,2,3,4,5" var="item">
+        <meter value="{!item / 5}"/><br/>
+    </aura:iteration>
+    
+    <lightning:button label="Click For Alert" variant="Brand" onclick="{!c.clickForAlert}"/>
+    
+    <!--<aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+    <aura:handler name="render" value="{!this}" action="{!c.onRender}"/>-->
+</aura:component>

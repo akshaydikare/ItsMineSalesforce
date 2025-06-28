@@ -1,0 +1,12 @@
+<apex:page standardController="Case" extensions="ApexClassToCheckIP" id="ThePage" tabStyle="Case" >
+    <apex:form id="theForm">
+    <!-- PageBlock PB1 for internal users -->    
+    <apex:pageblock title="Attachments" id="PB1" rendered="{!IPCompareResult}" >
+        PageBlock 1
+    </apex:pageblock>
+
+    <apex:pageblock title="Attachments" id="PB2" rendered="{!(!IPCompareResult)}" >
+        Pageblock 2
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

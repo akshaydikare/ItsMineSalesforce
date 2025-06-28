@@ -1,0 +1,36 @@
+<apex:page controller="CL_DML_example_1" sidebar="true" showHeader="true">
+    
+    {!$User.LastName}<br/>
+    {!$Organization.Name}
+    <apex:form >
+        <apex:pageBlock title="Accounts-Contacts">
+            <apex:pageBlockSection title="Account" collapsible="false">
+                <apex:inputField value="{!acc.Name}"/>
+                <apex:inputField value="{!acc.Phone}"/>
+                <apex:inputField value="{!acc.Rating}"/>
+                <apex:inputField value="{!acc.Industry}"/>
+            </apex:pageBlockSection>
+            <br/> <br/> <br/>
+            <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!Create}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!contacts}" var="c" id="one">
+                <apex:column headerValue="Last Name">
+                    <apex:inputField value="{!c.LastName}"/>
+                </apex:column>
+                 <apex:column headerValue="First Name">
+                    <apex:inputField value="{!c.FirstName}"/>
+                </apex:column>
+                 <apex:column headerValue="Phone">
+                    <apex:inputField value="{!c.Phone}"/>
+                </apex:column>
+                 <apex:column headerValue="Email">
+                    <apex:inputField value="{!c.Email}"/>
+                </apex:column>
+                 <apex:column headerValue="Action">
+                    <apex:commandButton value="Add" action="{!add}" reRender="one"/> 
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

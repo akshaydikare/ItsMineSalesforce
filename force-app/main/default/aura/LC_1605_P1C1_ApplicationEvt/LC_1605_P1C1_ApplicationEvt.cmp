@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:registerEvent name="akshayApp" type="c:LE_1605_AppEvent"/>
+    <lightning:card title="Parent1 Child1">
+
+    <lightning:button label="Submit" onclick="{!c.callMe}"></lightning:button>
+    </lightning:card>
+</aura:component>

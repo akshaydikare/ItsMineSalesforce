@@ -1,0 +1,28 @@
+<apex:page controller="CL_AccountDataTable" >
+    <apex:form >
+        <apex:pageBlock title="Search Data">
+            <apex:pageBlockButtons location="Bottom">
+                <apex:commandButton value="Search" action="{!search}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Name"/>
+                    <apex:inputText value="{!accName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Industry"/>
+                    <apex:inputText value="{!accIndustry}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        <apex:datatable value="{!accounts}" Var="a" cellpadding="5" rules="rows" border="Frame" >
+            <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.industry}"/>
+            <apex:column value="{!a.rating}"/>
+        </apex:datatable>
+
+        </apex:pageBlock>
+
+        
+        
+    </apex:form>
+</apex:page>
